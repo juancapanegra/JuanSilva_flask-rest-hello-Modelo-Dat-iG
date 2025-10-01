@@ -67,6 +67,7 @@ class Media(db.Model):
     )
     url: Mapped[str] = mapped_column(String(80), nullable=False)
     post_id: Mapped[int] = mapped_column(ForeignKey('post.id'))
+    user_id: Mapped[int] = mapped_column(ForeignKey('user.id')
 
     post: Mapped["Post"] = relationship(
         "Post", back_populates="medias")
